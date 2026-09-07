@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: class-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/classes_db
+
+class:
+  member-timeout-ms: 2000
+  default-capacity: 25
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true

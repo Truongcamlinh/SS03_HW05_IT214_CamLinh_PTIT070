@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: booking-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/bookings_db
+
+booking:
+  class-timeout-ms: 2000
+  hold-seat-enabled: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true

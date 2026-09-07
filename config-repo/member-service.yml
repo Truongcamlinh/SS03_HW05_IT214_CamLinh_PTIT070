@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: member-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/members_db
+
+member:
+  jwt-secret: change-me
+  max-login-devices: 2
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
